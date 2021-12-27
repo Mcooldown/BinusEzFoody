@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseQuantityActivity"
+    android:padding="20dp">
+
+    <TextView
+        style="@style/ActivityTitle"
+        android:id="@+id/choose_quantity_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/item_box_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/second_orange"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/choose_quantity_title"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/item_image_detail"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/drink"
+            android:paddingEnd="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/item_name_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HALO"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_price_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Rp.30000"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/text_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input quantity"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/item_box_detail"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_order_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickOrder"
+        android:text="SUBMIT ORDER"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="2"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/text_quantity" />
+
+    <Button
+        android:id="@+id/btn_order_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:onClick="toItemList"
+        android:text="ORDER MORE"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/text_quantity"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
+        android:id="@+id/btn_to_my_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:onClick="goToMyOrder"
+        android:text="GO TO MY ORDER"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/btn_order_more"
+        tools:layout_editor_absoluteX="20dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
